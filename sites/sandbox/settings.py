@@ -25,10 +25,10 @@ MANAGERS = ADMINS
 # Use a Sqlite database by default
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': location('db.sqlite'),
-        'USER': '',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'wuyisj',
+        'USER': 'xinyi',
+        'PASSWORD': 'jinny59koo',
         'HOST': '',
         'PORT': '',
         'ATOMIC_REQUESTS': True
