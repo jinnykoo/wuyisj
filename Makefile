@@ -18,7 +18,6 @@ build_sandbox:
 	sites/sandbox/manage.py loaddata sites/sandbox/fixtures/child_products.json
 	sites/sandbox/manage.py oscar_populate_countries
 	sites/sandbox/manage.py loaddata sites/_fixtures/pages.json sites/_fixtures/auth.json
-	sites/sandbox/manage.py loaddata sites/sandbox/fixtures/orders.json
 	sites/sandbox/manage.py clear_index --noinput
 	sites/sandbox/manage.py update_index catalogue
 

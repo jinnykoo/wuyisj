@@ -44,7 +44,7 @@
     "fields": {
         "unit_price_excl_tax": "7.99",
         "status": "Pending",
-        "stockrecord": 6,
+        "stockrecord": 3,
         "partner_sku": "9780553380958",
         "line_price_excl_tax": "7.99",
         "unit_retail_price": null,
@@ -52,7 +52,7 @@
         "partner_name": "Book partner",
         "line_price_incl_tax": "7.99",
         "title": "Snow Crash",
-        "product": 12,
+        "product": 3,
         "line_price_before_discounts_excl_tax": "7.99",
         "upc": "9780553380958",
         "line_price_before_discounts_incl_tax": "7.99",
