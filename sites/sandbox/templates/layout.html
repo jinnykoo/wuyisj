@@ -13,18 +13,6 @@
     <div id="layout">
         <header class="header clearfix">
             {% include "partials/nav_accounts.html" %}
-            <div class="container-fluid">
-                <div class="header-content">
-                    <div>
-                        {% include "partials/brand.html" %}
-                    </div>
-                    <div>
-                        {% block mini_basket %}<p><i class="icon-cart"></i>{% include "partials/mini_basket.html" %}</p>{% endblock %}
-                        <p class="hidden-phone"><i class="icon-mobile"></i> <span>{% trans "Customer Service" %} <br/> <strong>1-800-424-1324</strong></span></p>
-                    </div>
-                 </div>
-            </div>
-            {% category_tree depth=2 as categories %}
             {% block navigation %}
                 {% include "partials/nav_primary.html" %}
             {% endblock %}
