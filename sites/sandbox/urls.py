@@ -8,6 +8,7 @@ from oscar.app import shop
 from oscar.views import handler500, handler404, handler403  # noqa
 
 from apps.sitemaps import base_sitemaps
+from apps.designer import views
 
 
 admin.autodiscover()
@@ -23,6 +24,7 @@ urlpatterns = [
         'sitemaps': base_sitemaps}),
     url(r'^sitemap-(?P<section>.+)\.xml$',
         'django.contrib.sitemaps.views.sitemap', {'sitemaps': base_sitemaps}),
+    url(r'^create/$', views.create, name='create'),
 ]
 
 # Prefix Oscar URLs with language codes

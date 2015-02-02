@@ -11,17 +11,25 @@
             {% else %}
                 <link rel="stylesheet" type="text/css" href="{% static "wuyi/css/styles.css" %}" />
                 <link rel="stylesheet" type="text/css" href="{% static "wuyi/css/responsive.css" %}" />
+                <link rel="stylesheet" href="{% static "wuyi/plugins/app.css" %}" type="text/css" media="all">
+                <link rel="stylesheet" href="{% static "wuyi/plugins/style.css" %}" type="text/css" media="all">
+                <link rel="stylesheet" href="{% static "wuyi/plugins/jquery-ui-1.8.17.custom.css" %}" type="text/css" media="all">
+
             {% endif %}
         {% endcompress %}
     {% endblock %}
 {% endblock %}
 
-
+{% block cdn_scripts %}
+{% endblock %}
 {% block scripts %}
 {% compress js %}
 <!-- Twitter Bootstrap -->
+<script type="text/javascript" src="{% static "wuyi/js/jquery/jquery-2.1.3.min.js" %}"></script>
 <script type="text/javascript" src="{% static "wuyi/js/bootstrap/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "wuyi/plugins/jquery-ui-1.10.3.custom.min.js" %}"></script>
+<!-- Oscar
 <!-- Oscar -->
-<script src="{% static "wuyi/js/oscar/ui.js" %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static "wuyi/js/oscar/ui.js" %}" type="text/javascript" charset="utf-8"></script> 
 {% endcompress %}
 {% endblock scripts %}
