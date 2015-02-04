@@ -3,10 +3,12 @@ from django.conf import settings
 from django.core.files import File
 from oscar.core.loading import get_class, get_classes
 
-ProductClass, Product, Category, ProductCategory, ProductImage, 
-ProductAttribute, ProductAttributeValue, AttributeOption = get_classes(
+ProductClass, Product, Category, ProductCategory = get_classes(
     'catalogue.models', ('ProductClass', 'Product', 'Category',
-                         'ProductCategory', 'ProductImage', 'ProductAttribute', 'ProductAttributeValue', 'AttributeOption'))
+                         'ProductCategory'))
+ProductImage, ProductAttribute, ProductAttributeValue, AttributeOption = get_classes(
+	'catalogue.models', ('ProductImage', 'ProductAttribute', 'ProductAttributeValue', 'AttributeOption'))
+
 Partner, StockRecord = get_classes('partner.models', ('Partner', 'StockRecord'))
 
 
@@ -74,18 +76,21 @@ def create(request):
 		stock1.product = child1
 		stock1.partner = partner
 		stock1.num_in_stock = 100
+		stock1.partner_sku = 'test4'
 		stock1.save()
 
 		stock2 = StockRecord()
 		stock2.product = child2
 		stock2.partner = partner
 		stock2.num_in_stock = 100
+		stock2.partner_sku = 'test5'
 		stock2.save()
 
 		stock3 = StockRecord()
 		stock3.product = child3
 		stock3.partner = partner
 		stock3.num_in_stock = 100
+		stock3.partner_sku = 'test6'
 		stock3.save()
 
 		new_file = File(open('./public/photo.jpg', 'rb'))
