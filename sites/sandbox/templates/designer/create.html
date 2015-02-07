@@ -7,62 +7,91 @@
     <section class="design-bg">
         <form id="create_product" method="post" action="/create/">
             {% csrf_token %}
-          
-        <div class="container">
-            <div class="row">
+        <div id="rootwizard">
 
-<!-- ******** ******* ******* ***** Column #2  ******** ******* ******* ***** -->
-                <div class=" col-sm-6">
-                    <div class="designContainer" id="printable">
-                        <div id="imagesContainer"></div>
-                        <img id="Tshirtsrc" src="{% static "wuyi/plugins/images/white-l.jpg" %}" alt="White T-shirt">
-                    </div>
-                    <hr>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Preview</button>
-                </div>
-<!-- ******** ******* ******* ***** Column #3  ******** ******* ******* ***** -->
-
-
-                <div class=" col-sm-3">
-                    <div class="widget">
-                        <div class="widget-header">
-                            <i class="icon-star"></i>
-                            <h3>Images Options</h3>
-                        </div>
-                        <div class="widget-content">  
-                            <h5><i class="icon-picture"></i> Add image</h5>
-                            <input type="file" id="imgInp" name="file" />
-                            <hr>
-                            <h5><i class="icon-tags"></i> Collections</h5>
-                            <ul class="tshirts unstyled clearfix tooltip-show">                
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title='White T-shirt'>
-                                        <img src="{% static "wuyi/plugins/images/white-l.jpg" %}" alt="White T-shirt">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title='Tshirt 2'>
-                                        <img src="{% static "wuyi/plugins/images/blue-l.jpg" %}" alt="Tshirt 2">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title='tshirt 1'>
-                                        <img src="{% static "wuyi/plugins/images/black.jpg" %}" alt="tshirt 1">
-                                    </a>
-                                </li>
-                            </ul>
-                            <hr>
-                        </div>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul>
+                            <li><a href="#tab1" data-toggle="tab">First</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Second</a></li>
+                            <li><a href="#tab3" data-toggle="tab">Third</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <input id='imgsrc' type='hidden' name='blabla' value="test">
-        <input id='offsetx' type='hidden' name='valuex' value="test">
-        <input id='offsety' type='hidden' name='valuey' value="test">
-        <input id='imgHeight' type='hidden' name='valueh' value="test">
-        <input id='imgWidth' type='hidden' name='valuew' value="test">
+            <div class="tab-content">
+                <div class="tab-pane" id="tab1">
+                    <div class="container">
+                        <div class="row">
 
+            <!-- ******** ******* ******* ***** Column #2  ******** ******* ******* ***** -->
+                            <div class=" col-sm-6">
+                                <div class="designContainer" id="printable">
+                                    <div id="imagesContainer"></div>
+                                    <img id="Tshirtsrc" src="{% static "wuyi/plugins/images/white-l.jpg" %}" alt="White T-shirt">
+                                </div>
+                                <hr>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Preview</button>
+                            </div>
+            <!-- ******** ******* ******* ***** Column #3  ******** ******* ******* ***** -->
+
+
+                            <div class=" col-sm-3">
+                                <div class="widget">
+                                    <div class="widget-header">
+                                        <i class="icon-star"></i>
+                                        <h3>Images Options</h3>
+                                    </div>
+                                    <div class="widget-content">  
+                                        <h5><i class="icon-picture"></i> Add image</h5>
+                                        <input type="file" id="imgInp" name="file" />
+                                        <hr>
+                                        <h5><i class="icon-tags"></i> Collections</h5>
+                                        <ul class="tshirts unstyled clearfix tooltip-show">                
+                                            <li>
+                                                <a href="#" data-toggle="tooltip" data-placement="bottom" title='White T-shirt'>
+                                                    <img src="{% static "wuyi/plugins/images/white-l.jpg" %}" alt="White T-shirt">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="tooltip" data-placement="bottom" title='Tshirt 2'>
+                                                    <img src="{% static "wuyi/plugins/images/blue-l.jpg" %}" alt="Tshirt 2">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="tooltip" data-placement="bottom" title='tshirt 1'>
+                                                    <img src="{% static "wuyi/plugins/images/black.jpg" %}" alt="tshirt 1">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id='imgsrc' type='hidden' name='blabla' value="test">
+                    <input id='offsetx' type='hidden' name='valuex' value="test">
+                    <input id='offsety' type='hidden' name='valuey' value="test">
+                    <input id='imgHeight' type='hidden' name='valueh' value="test">
+                    <input id='imgWidth' type='hidden' name='valuew' value="test">
+                </div>
+                <div class="tab-pane" id="tab2">
+                    tab2
+                </div>
+                <div class="tab-pane" id="tab3"> 
+                    tab3
+                </div>
+                <ul class="pager wizard">
+                    <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                    <li class="previous"><a href="#">Previous</a></li>
+                    <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                    <li class="next"><a href="#">Next</a></li>
+                </ul>
+            </div>
+
+        </div>
         <button type='submit' name="submit" value="create product">create </button>
     </form>
     </section>
@@ -80,15 +109,30 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
-
-
 {% endblock%}
 
 {% block extrascripts %}
 
-
+<script  src="{% static "wuyi/js/jquery.bootstrap.wizard.min.js" %}"></script>
 <script  src="{% static "wuyi/plugins/app.js" %}"></script>
 <script type="text/javascript">
+
+$(document).ready(function() {
+    $('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
+            if(index==2) {
+                // Make sure we entered the name
+                // if(!$('#name').val()) {
+                //     alert('You must enter your name');
+                //     $('#name').focus();
+                //     return false;
+                // }
+            }
+            
+            // Set the name for the next tab
+            //$('#tab3').html('Hello, ' + $('#name').val());
+            
+        }});
+});
+</script>
 {% endblock %}
 
