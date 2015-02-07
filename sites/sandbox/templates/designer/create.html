@@ -58,13 +58,13 @@
             </div>
         </div>
         <input id='imgsrc' type='hidden' name='blabla' value="test">
-        <div id='convascontent'> 
-        </div>
+        <input id='offsetx' type='hidden' name='valuex' value="test">
+        <input id='offsety' type='hidden' name='valuey' value="test">
+        <input id='imgHeight' type='hidden' name='valueh' value="test">
+        <input id='imgWidth' type='hidden' name='valuew' value="test">
 
         <button type='submit' name="submit" value="create product">create </button>
     </form>
-
-    <button class='export' value="create product">export </button>
     </section>
   
 
@@ -88,32 +88,7 @@
 {% block extrascripts %}
 
 
-<script  src="{% static "wuyi/plugins/html2canvas.js" %}"></script>
 <script  src="{% static "wuyi/plugins/app.js" %}"></script>
 <script type="text/javascript">
-jQuery(document).ready(function($) { 
-
-         $('.export').click(function(){
-            console.log('click');
-         
-            $('#printable').find('i').css('display', 'none');
-            $('#printable').find('.ui-icon').css('display', 'none');
-
-             var exportCanvas = document.getElementById('printable');
-
-                html2canvas(exportCanvas, {
-                    //when finished fucntion
-                onrendered: function(canvas) {           
-                
-                    // $('#convascontent').append(canvas);
-                    // //add id attribute to the canvas
-                    // $('#convascontent').find('canvas').attr('id','mycanvas');
-                    $('#imgsrc').attr('name', 'imagesrc');
-                    $('#imgsrc').attr('value', canvas.toDataURL('image/jpeg', 1.0).replace("data:image/jpeg;base64,", ""));
-                }
-            });
-    });    
-});
-</script>
 {% endblock %}
 
