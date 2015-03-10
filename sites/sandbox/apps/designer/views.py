@@ -12,7 +12,11 @@ ProductImage, ProductAttribute, ProductAttributeValue, AttributeOption = get_cla
 
 Partner, StockRecord = get_classes('partner.models', ('Partner', 'StockRecord'))
 
+def home(request):
+	if request.method == 'GET':
+		return render(request, 'home.html')
 
+		
 def create(request):
 	context_dict = {}
 	if request.method == 'POST':

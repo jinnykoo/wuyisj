@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^sitemap-(?P<section>.+)\.xml$',
         'django.contrib.sitemaps.views.sitemap', {'sitemaps': base_sitemaps}),
     url(r'^create/$', views.create, name='create'),
+    url(r'^home/$', views.home, name='home'),
 ]
 
 # Prefix Oscar URLs with language codes

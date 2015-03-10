@@ -13,9 +13,9 @@
                 <div class="navbar-inner">
                     <div class="container">
                         <ul>
-                            <li><a href="#tab1" data-toggle="tab">First</a></li>
-                            <li><a href="#tab2" data-toggle="tab">Second</a></li>
-                            <li><a href="#tab3" data-toggle="tab">Third</a></li>
+                            <li><a href="#tab1" data-toggle="tab">First Step</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Second Step</a></li>
+                            <li><a href="#tab3" data-toggle="tab">Third Step</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,10 +78,12 @@
                     <input id='imgWidth' type='hidden' name='valuew' value="test">
                 </div>
                 <div class="tab-pane" id="tab2">
-                    tab2
+                    <div> Product info</div>
+                    <label>Price:</label> <input id="price" name="proPrice">  <br>
+                    <label>description:</label> <input id="desc" name="proDesc"> 
                 </div>
                 <div class="tab-pane" id="tab3"> 
-                    tab3
+                    <button type='submit' name="submit" value="create product">create </button>
                 </div>
                 <ul class="pager wizard">
                     <li class="previous first" style="display:none;"><a href="#">First</a></li>
@@ -92,7 +94,6 @@
             </div>
 
         </div>
-        <button type='submit' name="submit" value="create product">create </button>
     </form>
     </section>
   
@@ -120,12 +121,14 @@
 $(document).ready(function() {
     $('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
             if(index==2) {
-                // Make sure we entered the name
-                // if(!$('#name').val()) {
-                //     alert('You must enter your name');
-                //     $('#name').focus();
-                //     return false;
-                // }
+                //$('.designContainer').clone().prependTo('.tPre').find('i').remove();
+                //$('.tPre').find('.ui-icon').css('display', 'none');
+               //Make sure we entered the price
+                if(!$('#price').val()) {
+                    alert('You must enter your price');
+                    $('#price').focus();
+                    return false;
+                }
             }
             
             // Set the name for the next tab

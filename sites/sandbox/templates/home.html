@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load compress %}
+{% load category_tags %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extrahead %}  
+    <!--[if lte IE 7]><script src="{% static "wuyi/fonts/lte-ie7.js" %}"></script><![endif]-->
+{% endblock %}
+
+{% block layout %}
+    <div id="layout">
+        <header class="header clearfix">
+
+            <div class="t-image">
+                  <img src="{% static "header-bg-about.jpg" %}" alt="" />
+                  <span class="ban-t">WUYI design:<span class='spacer'></span><span class='spacer'></span>Build your own T-shirt!</span>
+            </div>
+            <div class="home-login">
+                {% if user.is_authenticated %}
+                    <span class="home-log"><a id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></span>
+                {% else %}
+                    <span class="home-log"><a id="login_link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></span>
+                {% endif %}
+            </div>
+        </header>
+
+        {% block content_wrapper %}
+        <div class="page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 more-designer">
+                        <span>
+                        Check out our top designer
+                        
+                        </span>
+                    </div>
+                    <div class="col-md-8  more-tshirt">
+                        Check out our new T-shirt...
+                       
+                    </div>
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="designers">
+                        <img src="http://pic2.zhimg.com/98424bb1d_m.jpg">
+                        <img src="http://pic1.zhimg.com/bdc783e25cddff78c63c3b6c0dd51c78_m.jpg">
+                        <img src="http://pic1.zhimg.com/70ddd5e0c_m.jpg">
+                        <img src="http://pic2.zhimg.com/424c70919_m.jpg">
+                        <img src="http://pic4.zhimg.com/7c4d3e9ef_m.jpg">
+                        <img src="http://pic4.zhimg.com/a06fc4c27_m.jpg">
+                        <img src="http://pic1.zhimg.com/da8e974dc_m.jpg">
+                        <img src="http://pic4.zhimg.com/2b7078d9b_m.jpg">
+                        <img src="http://pic1.zhimg.com/5daddd688_m.jpg">
+                        <img src="http://pic4.zhimg.com/b0f1423db_m.jpg">
+                        <img src="http://pic2.zhimg.com/50e9c2601_m.jpg">
+                        <img src="http://pic4.zhimg.com/c8ee24e38c4b7be3657a34caae5f9267_m.jpg">
+                        <img src="http://pic4.zhimg.com/7e626246b_m.jpg">
+                        <img src="http://pic4.zhimg.com/99957434f_m.jpg">
+                        <img src="http://pic4.zhimg.com/bb85a3e1b_m.jpg">
+                        <img src="http://pic4.zhimg.com/bb85a3e1b_m.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-1"> 
+                        <div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div >
+                            <img class="random-t" src="http://www.ksoy22zr5deu.dioselgato.com/graphics/Ebay/anon-shirt.jpg" alt="the first parent product">
+
+                             <img class="random-t" src="http://thehouseoffun.com/images/D/T-Shirt%20Adventure%20Time%20BMO.jpg" alt="the first parent product">
+                        </div>
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <button type="button" class="btn btn-success get-start">Get Start Now!</button>
+                    </div>
+                     <div class="col-md-3"> 
+                      <img class="random-t" src="http://www.youngloverslabel.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/m/o/mona-lisa-t-shirt.jpg" alt="the first parent product">
+                    </div>
+                     <div class="col-md-3"> 
+                      <img class="random-t" src="http://3.bp.blogspot.com/-cYMWc3u1-Eo/TuhFoll-JMI/AAAAAAAB-ss/ZFCx6ayHSM4/s1600/T-Shirt+funny+pictures+%252818%2529.jpg" alt="the first parent product">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+        <div id="faux-foot"></div>
+    </div>
+
+    {% include "partials/footer.html" %}
+{% endblock %}
+
+{% block extrascripts %}
+{% endblock %}
