@@ -395,6 +395,7 @@ OSCAR_SHOP_TAGLINE = 'Sandbox'
 OSCAR_SHOP_NAME = 'Wuyisj'
 
 OSCAR_RECENTLY_VIEWED_PRODUCTS = 20
+OSCAR_PRODUCTS_PER_PAGE = 9
 OSCAR_ALLOW_ANON_CHECKOUT = True
 
 # This is added to each template context by the core context processor.  It is
