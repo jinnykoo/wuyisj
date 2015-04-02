@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.files import File
 from oscar.core.loading import get_class, get_classes
 from PIL import Image
+from apps.designer.models import TshirtSKU
 
 ProductClass, Product, Category, ProductCategory = get_classes(
     'catalogue.models', ('ProductClass', 'Product', 'Category',
@@ -88,27 +89,43 @@ def create(request):
 		attrVal3.save()
 
 		# #create stockrecords
+		# Get the latest sku
+		latest_sku = TshirtSKU.objects.order_by('-pk')[0]
+		new_sku1 = latest_sku.sku + 1
+		new_sku2 = latest_sku.sku + 2
+		new_sku3 = latest_sku.sku + 3
+
+		tshirtsku = TshirtSKU()
+		tshirtsku.sku = new_sku1
+		tshirtsku.save()
+
+		tshirtsku2 = TshirtSKU()
+		tshirtsku2.sku = new_sku2
+		tshirtsku2.save()
+
+		tshirtsku3 = TshirtSKU()
+		tshirtsku3.sku = new_sku3
+		tshirtsku3.save()
 
 		partner = Partner.objects.get(pk=2)
 		stock1 = StockRecord()
 		stock1.product = child1
 		stock1.partner = partner
 		stock1.num_in_stock = 100
-		stock1.partner_sku = 'sku001'
+		stock1.partner_sku = new_sku1
 		stock1.save()
 
 		stock2 = StockRecord()
 		stock2.product = child2
 		stock2.partner = partner
 		stock2.num_in_stock = 100
-		stock2.partner_sku = 'sku002'
-		stock2.save()
+		stock2.partner_sku = new_sku2
 
 		stock3 = StockRecord()
 		stock3.product = child3
 		stock3.partner = partner
 		stock3.num_in_stock = 100
-		stock3.partner_sku = 'sku003'
+		stock3.partner_sku = new_sku3
 		stock3.save()
 
 		new_file = File(open('./public/pasted.png', 'rb'))
